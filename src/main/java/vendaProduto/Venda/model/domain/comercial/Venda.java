@@ -13,6 +13,31 @@ public class Venda{
     private long id;
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataVenda;
+
+    public long getId() {
+        return id;
+    }
+
+    public Date getDataVenda() {
+        return dataVenda;
+    }
+
+    public void setDataVenda(Date dataVenda) {
+        this.dataVenda = dataVenda;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Set<Item> getItens() {
+        return itens;
+    }
+
+    public void setItens(Set<Item> itens) {
+        this.itens = itens;
+    }
+
     @OneToMany(mappedBy = "venda")
     Set<Item> itens;
     @ManyToOne
